@@ -122,7 +122,7 @@ We can remove everything in the `src/components`, as well as `src/assets/base.cs
 
 ## Creating a Select Component
 
-Let's go ahead and create our component in `src/components/VSelect.vue` with the following starter code, which is mostly taken from the [headlessUI docs](https://headlessui.com/vue/listbox). I've only added very basic styling.
+Let's go ahead and create our component in `src/components/VSelect.vue` with the following starter code, which is mostly taken from the [headlessUI docs](https://headlessui.com/vue/listbox). I've added basic styling and added some props to make it broadly reusable.
 
 ```vue
 <script setup lang="ts">
@@ -233,7 +233,7 @@ const person = ref()
 </template>
 ```
 
-This works fine, but there are errors that we could potentially introduce in our source code that wouldn't be noticed until runtime. Right now we're having to use `any[]` as the type of our `items` prop, since we want this select component to be reusable for many different inputs. We could be providing users, countries, etc.
+This works fine, but there are errors that we could potentially introduce in our source code that wouldn't be noticed until runtime. Right now we're having to use `any[]` as the type of our `items` prop. We could be providing users, countries, etc.
 
 This is a problem - suppose we do change our above code by setting the `valueKey` to `person_id` instead. `person_id` is clearly not going to result in anything useful, since our `people` don't have this property! However, TypeScript won't complain and we won't see any issue until we actually use this in the browser.
 
@@ -324,7 +324,7 @@ const props = defineProps<{
 </script>
 ```
 
-Now, to enrich the typing of our `valueKey` property, we need to find all the keys of `TItem` which have type `TValue`. Credit to [this SO answer](https://stackoverflow.com/a/49752227) for the neat utility type.
+Now, to enrich the typing of our `valueKey` property, we need to find all the keys of `TItem` which have type `TValue`. Credit to [this SO answer](https://stackoverflow.com/a/49752227) for this nice `KeyOfType` utility.
 
 ```vue
 <script setup lang="ts" generic="TValue, TItem">
