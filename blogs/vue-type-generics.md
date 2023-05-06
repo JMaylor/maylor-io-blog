@@ -6,7 +6,7 @@ Vue v3 continues to provide excellent type support, and in v3.3.0, it'll be expa
 
 We're going to create a Select component using the [headlessUI Listbox](https://headlessui.com/vue/listbox).
 
-If you want to skip setting up the basic project and installing dependencies, you can grab the starter code from the `starter` branch [here](https://github.com/JMaylor/vue-type-generics/tree/starter) and skip to the next section.
+If you want to skip setting up the basic project and installing dependencies, you can grab the starter code from the `starter` branch [here](https://github.com/JMaylor/vue-type-generics/tree/starter) and [skip to the next section](#creating-a-select-component).
 
 Firstly, I'm going to create a new Vue 3 + Vite project.
 
