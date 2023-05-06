@@ -7,6 +7,7 @@ export default defineConfig({
       port: 3000
     }
   },
+  cleanUrls: true,
   title: "Joe Maylor",
   description: "A VitePress Site",
   themeConfig: {
