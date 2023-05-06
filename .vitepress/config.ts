@@ -7,25 +7,26 @@ export default defineConfig({
       port: 3000
     }
   },
-  title: "My Awesome Project",
+  title: "Joe Maylor",
   description: "A VitePress Site",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Blogs', link: '/blogs/vue-type-generics' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Blogs',
         items: [
-          { text: 'Vue 3.3 Type Generics', link: '/vue-type-generics' },
+          { text: 'Vue 3.3 Type Generics', link: '/blogs/vue-type-generics' },
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/JMaylor/maylor-io-blog' }
     ]
   }
 })
