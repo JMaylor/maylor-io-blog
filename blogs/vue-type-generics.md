@@ -397,6 +397,8 @@ It tells us we need to add an `extends` constraint, so let's do that:
 And there we have it, a type-safe, extendable Select component in Vue 3.3, utilising generically typed components!
 You can find the full source code on the `blog-final` branch [here](https://github.com/JMaylor/vue-type-generics/tree/blog-final).
 
+If you're interested in seeing more complex examples, check out the `master` branch [here](https://github.com/JMaylor/vue-type-generics) with additional components, typing and props for customisation. You can see some of the deployed components at https://lucent-faloodeh-db7134.netlify.app/
+
 For further reading on TypeScript Generics, see
 https://www.typescriptlang.org/docs/handbook/2/generics.html
 
