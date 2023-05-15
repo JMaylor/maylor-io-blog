@@ -1,6 +1,6 @@
 # Vue v3.3.0 - Generically Typed SFCs.
  
-Vue v3 continues to provide excellent type support, and in v3.3.0, it'll be expanding on this with allowing generic types to be used in your components. Let's dive in and see how this works, and what benefits it can bring.
+Vue 3 continues to provide excellent type support, and since v3.3.0, we've been able to use generic types our component definitions. Let's dive in and see how this works, and what benefits it can bring.
 
 ## Getting Started
 
@@ -10,15 +10,21 @@ If you want to skip setting up the basic project and installing dependencies, yo
 
 Firstly, I'm going to create a new Vue 3 + Vite project.
 
-```bash
-npm create vite@latest vue-type-generics
+:::code-group
+```bash [pnpm]
+pnpm create vue@latest vue-type-generics && cd vue-type-generics
 ```
+```bash [npm]
+npm create vue@latest vue-type-generics && cd vue-type-generics
+```
+```bash [yarn]
+yarn create vue@latest vue-type-generics && cd vue-type-generics
+```
+:::
 
 And select the following options:
 
-```
-√ Select a framework: Vue
-√ Select a variant: Customize with create-vue
+```bash
 √ Add TypeScript? Yes
 √ Add JSX Support? No
 √ Add Vue Router? No
@@ -29,24 +35,37 @@ And select the following options:
 √ Add Prettier for code formatting? No
 ```
 
-At the time of writing, Vue v3.3.0 is still in beta, so we'll need to explicitly install it. For all the package installations, if using npm you'll need to add the `--legacy-peer-deps` flag to to peer dependencies being broken when using Vue v3.3.0.
-
-```bash
-cd vue-type-generics && npm install vue@3.3.0-beta.3
-```
-
 We'll also install headlessUI and tailwindcss:
 
-```bash
-npm install @headlessui/vue --legacy-peer-deps
-npm install -D tailwindcss postcss autoprefixer --legacy-peer-deps
+:::code-group
+```bash [pnpm]
+pnpm add @headlessui/vue
+pnpm add -D tailwindcss postcss autoprefixer
 ```
+```bash [npm]
+npm install @headlessui/vue
+npm install -D tailwindcss postcss autoprefixer
+```
+```bash [yarn]
+yarn add @headlessui/vue
+yarn add -D tailwindcss postcss autoprefixer
+```
+:::
 
 To [configure tailwindcss](https://tailwindcss.com/docs/guides/vite#vue):
 
-```bash
+:::code-group
+```bash [pnpm]
+pnpm dlx tailwindcss init -p
+```
+```bash [npm]
 npx tailwindcss init -p
 ```
+```bash [yarn]
+yarn tailwindcss init -p
+```
+:::
+
 ```js
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
